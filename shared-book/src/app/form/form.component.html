@@ -1,0 +1,38 @@
+<!-- <p>form works!</p> --> -->
+
+ <div class="form"> 
+    <h2>Ajouter un nouveau post</h2>
+    
+    <form (ngSubmit)="addPost()">
+      <div>
+        <label for="title">Titre:</label>
+        <input type="text" id="title" [(ngModel)]="newPostTitle" name="title" placeholder="ex : Mon premier jour en Italie" title="veuillez donner un titre à l'image" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="newPostDescription" name="description" placeholder="ex : Souvenir de mon voyage en Italie..." title="veuillez inscrire ici la description de l'image" required></textarea>
+      </div>
+      <div>
+        <label for="location">Localisation de l'image:</label>
+        <input type="text" id="location" [(ngModel)]="newPostLocation" name="location" placeholder="ex : Italie" title="veuillez inscrire le lieu de l'image">
+      </div>
+      <div>
+        <label for="imageUrl">URL de l'image:</label>
+        <input type="text" id="imageUrl" [(ngModel)]="newPostImageUrl" name="imageUrl" title="veuillez entrez l'url de l'image" placeholder="ex : https://...." required>
+      </div>
+      <div class="image-preview-container">
+        <div class="image-preview">
+            <div class="image-frame">
+                <img [src]="newPostImageUrl" *ngIf="newPostImageUrl" alt="Aperçu de l'image">
+            </div>
+        </div>
+        <button type="submit" title="bouton envoyer">Ajouter</button>
+      </div>
+     
+     <div class="success-message" *ngIf="postAdded">
+        Le post a été ajouté avec succès !
+      </div>
+    </form>
+  </div>
+
+ 

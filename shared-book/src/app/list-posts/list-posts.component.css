@@ -1,0 +1,77 @@
+ .list-post {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  */
+    padding: 20px;
+}
+/*
+
+.post {
+    background-color: rgb(182, 182, 242);
+    border: 1px solid #000000;
+    border-radius: 10px; 
+    box-sizing: border-box;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    overflow: hidden;
+  
+} */
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Crée une grille avec des colonnes de largeur minimale de 300px */
+    grid-gap: 20px; /* Espace entre les éléments */
+}
+
+.post {
+    margin-bottom: 20px; 
+    /* background-color: rgb(217, 217, 244); */
+    background-color: #a6c8cd;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* height: 500px;  */
+    transform: translateY(0); /* Réinitialise la transformation */
+    transition: transform 0.3s ease; /* Animation de la transformation */
+}
+
+/* Applique un décalage aux éléments d'index pair */
+.post.odd {
+    transform: translateY(20px); /* Décalage vers le bas */
+}
+
+/* Effet hover pour l'animation */
+.post:hover {
+    transform: scale(1.05); /* Zoom sur l'élément au survol */
+}
+.famous {
+    /* background-color: rgb(236, 165, 13); */
+   
+    content: '🌟'; /* Icône "famous" */
+    margin-left: 5px; /* Espacement entre le titre et l'icône */
+    
+
+}
+
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+  }
+  
+.coeur {
+ 
+    animation: pulse 2s infinite;
+}
+/* .coeur{
+    background-color: blueviolet;
+}  */
+
+
+ 
+

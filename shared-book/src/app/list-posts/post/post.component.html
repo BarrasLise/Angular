@@ -1,0 +1,65 @@
+<!-- <div class="post">
+    <h4>Title : </h4>
+    <p>{{title}}</p>
+    <h4>Description : </h4>
+    <p>{{description}}</p>
+    <h4>Creation date : </h4>
+    <p>{{createdDate}}</p>
+
+    <img [src]="url" alt="" style="width: 300px; height: auto;">
+
+
+    <div>
+        <button (click)="liked()">Like</button>
+        <button (click)="disliked()">dislike</button>
+        {{like}} ♥
+    </div>
+    
+</div> -->
+
+<!-- <div *ngIf="myPost.location == 'Nantes'"> -->
+<!-- <div *ngIf="myPost.like>100"> -->
+
+    <!-- <img [src]="myPost.url" [alt]="myPost.title" style="width: 300px; height: auto;"> -->
+<div class="post-container">
+
+
+    <img [src]="myPost.url" [alt]="myPost.title" >
+    <!-- <div class="like-buttons"> -->
+        <div class="like-container">
+            
+            <!-- <i (click)="liked()" class="fa-solid fa-thumbs-up fa-xl"></i>
+            
+            <i (click)="disliked()" class="fa-solid fa-thumbs-down fa-xl"></i> -->
+            <div class="like-icon">
+                <i (click)="liked()" class="fa-solid fa-thumbs-up fa-m  like"></i>
+            </div>
+            <!-- <div class="number-like">
+                <p>{{myPost.like}} ♥ </p>
+    
+            </div> -->
+            <div class="number-like">
+                <p>{{myPost.like}} <span *ngIf="myPost.like <= 100">♥</span><span *ngIf="myPost.like > 100">★</span></p>
+            </div>
+            <!-- <p>{{myPost.like}} ♥ </p> -->
+            <div class="dislike-icon">
+                <i (click)="disliked()" class="fa-solid fa-thumbs-down fa-m  dislike"></i>
+            </div>
+            <!-- <button (click)="disliked()">dislike</button> -->
+            
+        </div>
+        <!-- </div> -->
+
+    <div class="info-container">
+        <p class="location-label" *ngIf="myPost.location "> <strong> Localisation :</strong> {{myPost.location | uppercase}} </p>
+        <!-- <h4>Title : </h4> -->
+        <h3 class="title"> {{myPost.title | titlecase }}</h3>
+        <h4>Description : </h4>
+        <p class="description"> {{myPost.description}}</p>
+        <!-- <h4>Création date : </h4> -->
+        <!-- <p class="location-label" *ngIf="myPost.location "> <strong> Localisation :</strong> {{myPost.location | uppercase}} </p> -->
+        <p class="creation-date"> La date de création est le {{myPost.createdDate | date : ' dd/MM/yy, à HH:mm'}}</p>
+    </div>
+</div>
+
+    

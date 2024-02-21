@@ -1,0 +1,82 @@
+/* Style du conteneur du formulaire */
+.form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+  }
+  
+  /* Style des titres */
+  .form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style des étiquettes */
+  .form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Style des champs de saisie */
+  .form input[type="text"],
+  .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  /* Style du bouton */
+  .form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #79CBD6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+/* Style de la prévisualisation de l'image */
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-preview {
+    flex: 1;
+    margin-top: 20px;
+    max-width: 150px; /* Définir une largeur maximale pour la prévisualisation */
+    max-height: 150px; /* Définir une hauteur maximale pour la prévisualisation */
+}
+.image-frame {
+    width: 150px;
+    height: 150px;
+
+    /* width: 100%;
+    height: 100%; */
+    border: 1px dashed #ccc; /* Style du cadre de prévisualisation */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.image-preview img {
+    width: 100%; 
+    height: 100%;
+    /* height: auto; */
+    /* height: 150px; */
+    /* max-height: 150px; */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+}
+  

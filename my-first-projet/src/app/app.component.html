@@ -1,0 +1,16 @@
+
+
+
+
+<app-server></app-server>
+
+<p *ngIf='ville =="bruxelles" ' > j'affiche un comentaire quelconque</p>
+
+@if(ville=="bruxelles"){
+    <p>ici j'ai un deuxième paragraphe</p>
+}
+
+@for(item of myArray; track $index){
+    <p>{{item}}</p>
+    <!-- <app-server></app-server> -->
+}

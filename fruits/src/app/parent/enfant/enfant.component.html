@@ -1,0 +1,10 @@
+<div class="enfant">
+    <h1>enfant works!</h1>
+    <p><strong>Fruit du jour : </strong> {{item}}</p>
+    <label for="item-input">Ajouter un fruit : </label>
+    <input type="text" id="item-input" #newItem>
+    <button type="button" (click)="addNewItem(newItem.value); newItem.value=''">ajouter à la liste </button>
+
+</div>
+
+

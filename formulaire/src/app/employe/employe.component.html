@@ -1,0 +1,25 @@
+<app-formulaire></app-formulaire>
+
+<div class="parent">
+    <p>Voici la liste des employées</p>
+    <div class="table-responsive " >
+        <table class="table table-hover w-100 " >
+            <thead class="table-primary">
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col" style="text-align: right;">Date de naissance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let employe of employes">
+                <td scope="row">{{ employe.nom | uppercase }}</td>
+                <td>{{ employe.prenom }}</td>
+                <td style="text-align: right;">{{ employe.dateNaissance | date: 'dd-MM-yyyy' }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

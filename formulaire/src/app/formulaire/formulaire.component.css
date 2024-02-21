@@ -1,0 +1,16 @@
+
+.form-group {
+    margin-bottom: 10px;  
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%; 
+    margin: 10px auto;
+}
+
+button {
+    width: auto; /* Ajuste la largeur du bouton en fonction de son contenu */
+    max-width: 150px; /* Définit la largeur maximale du bouton */
+    margin: 20px auto; /* Centre le bouton horizontalement */
+    display: block; /* Permet au bouton de prendre toute la largeur disponible */
+}

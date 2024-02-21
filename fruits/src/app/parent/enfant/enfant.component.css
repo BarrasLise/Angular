@@ -1,0 +1,8 @@
+.enfant {
+    background-color: brown;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 20px;
+}
+button {
+    margin: 5px;
+}

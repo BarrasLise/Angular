@@ -1,0 +1,14 @@
+<h3>hello from serverS component</h3>
+
+<h1>1 - string interpolation : </h1>
+<p> allow new server : {{allowNewServer}}</p>
+<h1>2 - proprety binding : </h1>
+<p [innerText]="test()"></p>
+<h1>3 - Event binding </h1>
+<button class="btn btn-primary" (click)="onCreateServer()">Add server</button>
+<p>Server status : {{status}}</p>
+<h1>4 - Two way binding</h1>
+<div>
+    <input type="text" style="margin-bottom: 1em;" class="form-control" [(ngModel)]="serverName">
+    <p>Server Name : {{serverName}}</p>
+</div>

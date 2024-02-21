@@ -1,0 +1,25 @@
+.list-post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    padding: 20px;
+}
+
+.post {
+    background-color: rgb(182, 182, 242);
+    border: 1px solid #000000;
+    border-radius: 10px; 
+    box-sizing: border-box;
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* box-shadow: 11px 9px 17px -8px rgba(0,0,0,0.78);
+    -webkit-box-shadow: 11px 9px 17px -8px rgba(0,0,0,0.78);
+    -moz-box-shadow: 11px 9px 17px -8px rgba(0,0,0,0.78); */
+}
+.posted {
+    background-color: rgb(236, 165, 13);
+}
+.coeur{
+    background-color: blueviolet;
+}

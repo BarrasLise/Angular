@@ -1,0 +1,18 @@
+.container {
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+   
+}
+.parent {
+    height: 100%;
+    width: 100%;
+    /* background-color: blueviolet; */
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
