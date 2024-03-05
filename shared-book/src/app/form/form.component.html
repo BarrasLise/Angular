@@ -1,9 +1,51 @@
-<!-- <p>form works!</p> --> -->
+<!-- <p>form works!</p> --> 
 
  <div class="form"> 
     <h2>Ajouter un nouveau post</h2>
+
+    <form [formGroup]="postForm" (ngSubmit)="onSubmitForm()">
+      <div>
+        <label for="title">Titre:</label>
+        <input type="text" id="title" formControlName="title" name="title" placeholder="ex : Mon premier jour en Italie" title="veuillez donner un titre à l'image" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" name="description" placeholder="ex : Souvenir de mon voyage en Italie..." title="veuillez inscrire ici la description de l'image" required></textarea>
+      </div>
+      <div>
+        <label for="imageUrl">Date de l'image:</label>
+        <input type="date" id="imageDate" formControlName="createdDate"  title="veuillez entrez la date de l'image"  required>
+      </div>
+      
+      <div>
+        <label for="imageUrl">URL de l'image:</label>
+        <input type="text" id="imageUrl" formControlName="url" name="imageUrl" title="veuillez entrez l'url de l'image" placeholder="ex : https://...." required>
+      </div>
+      <div>
+        <label for="location">Localisation de l'image:</label>
+        <input type="text" id="location" formControlName="location" name="location" placeholder="ex : Italie" title="veuillez inscrire le lieu de l'image">
+      </div>
+
+      <input class="button" type="submit" title="bouton envoyer" value="Ajouter" >
+      
+
+
+    </form>
+
+    <div class="card" *ngIf="postPreview$ |  async as post">  
+      
+      <div class="image-preview-container">
+        <div class="image-preview">
+            <div class="image-frame">  
+            <img [src]="post.url" [alt]="post.title">
+            </div>
+      </div>
+    </div>
+      
+      
+
     
-    <form (ngSubmit)="addPost()">
+    <!-- <form (ngSubmit)="addPost()">
       <div>
         <label for="title">Titre:</label>
         <input type="text" id="title" [(ngModel)]="newPostTitle" name="title" placeholder="ex : Mon premier jour en Italie" title="veuillez donner un titre à l'image" required>
@@ -32,7 +74,7 @@
      <div class="success-message" *ngIf="postAdded">
         Le post a été ajouté avec succès !
       </div>
-    </form>
+    </form> -->
   </div>
 
  

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { PostsService } from "../service/post.service";
 import { Post } from "../list-posts/post/post";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -9,45 +12,86 @@ import { Post } from "../list-posts/post/post";
 })
 export class FormComponent {
 
-  posts: Post[];
-  newPostTitle: string;
-  newPostDescription: string;
-  newPostLocation: string;
-  newPostImageUrl: string;
+  postForm : FormGroup;
+  postPreview$!: Observable<Post>;
 
-  postAdded: boolean = false;
-
-  constructor(private postsService: PostsService) { }
-
-  ngOnInit(): void {
-    this.posts = this.postsService.getPosts();
+  constructor(private formBuilder : FormBuilder, private postsService: PostsService){
+    
   }
 
-  addPost(): void {
+
+  
+  ngOnInit(): void {
+    this.postForm = this.formBuilder.group({
+      title: [null], 
+      description: [null],
+      like : [0],
+      createdDate: [null],
+      url: [null],
+      location : [null]
+    });
+
+    this.postPreview$= this.postForm.valueChanges
+
+    this.postPreview$= this.postForm.valueChanges.pipe(
+      map(formValue=>({
+        ...formValue,
+        // like:0,
+      })) 
+    );
 
     
-    if (this.newPostTitle && this.newPostDescription && this.newPostImageUrl) {
-      const newPost = new Post(
-        this.newPostTitle,
-        this.newPostDescription,
-        new Date(),
-        this.newPostImageUrl,
-        0, // Initial likes count
-        this.newPostLocation,
-      );
-      this.postsService.addPost(newPost);
-      this.postAdded = true;
-      // Réinitialiser le formulaire
-      this.resetForm();
+      
+  }
+
+  onSubmitForm(){
+    console.log(this.postForm.value);
+    if (this.postForm.valid) {
+      const newPost: Post = this.postForm.value; // Récupérez les données du formulaire sous forme d'objet Post
+      this.postsService.addPost(newPost); // Ajoutez le nouveau post à la liste des posts via le service
+      this.postForm.reset(); // Réinitialisez le formulaire après l'ajout du post
     }
   }
 
-  resetForm() {
-    this.newPostTitle = '';
-    this.newPostDescription = '';
-    this.newPostLocation = '';
-    this.newPostImageUrl = '';
+  // posts: Post[];
+  // newPostTitle: string;
+  // newPostDescription: string;
+  // newPostLocation: string;
+  // newPostImageUrl: string;
+
+  // postAdded: boolean = false;
+
+  // constructor(private postsService: PostsService) { }
+
+  // ngOnInit(): void {
+  //   this.posts = this.postsService.getPosts();
+  // }
+
+  // addPost(): void {
+
     
-  }
+  //   if (this.newPostTitle && this.newPostDescription && this.newPostImageUrl) {
+  //     const newPost = new Post(
+  //       this.newPostTitle,
+  //       this.newPostDescription,
+  //       new Date(),
+  //       this.newPostImageUrl,
+  //       0, // Initial likes count
+  //       this.newPostLocation,
+  //     );
+  //     this.postsService.addPost(newPost);
+  //     this.postAdded = true;
+  //     // Réinitialiser le formulaire
+  //     this.resetForm();
+  //   }
+  // }
+
+  // resetForm() {
+  //   this.newPostTitle = '';
+  //   this.newPostDescription = '';
+  //   this.newPostLocation = '';
+  //   this.newPostImageUrl = '';
+    
+  // }
 
 }

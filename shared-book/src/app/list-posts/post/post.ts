@@ -19,7 +19,8 @@ export class Post {
                 public createdDate:Date,
                 public url:string,
                 public like:number,
-                public location?:string){
+                public location?:string, 
+                ){
 
     }
 

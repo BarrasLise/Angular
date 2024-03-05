@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ListPostsComponent } from './list-posts/list-posts.component';
@@ -22,7 +22,8 @@ import { FormComponent } from './form/form.component';
   imports: [
     BrowserModule,
     FormsModule, 
-    appRoutingModule
+    appRoutingModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

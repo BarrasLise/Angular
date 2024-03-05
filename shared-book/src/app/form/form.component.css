@@ -18,6 +18,14 @@
     display: block;
     margin-bottom: 5px;
   }
+  .form input[type="date"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
   
   /* Style des champs de saisie */
   .form input[type="text"],
@@ -32,7 +40,7 @@
   }
   
   /* Style du bouton */
-  .form button {
+  .form .button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -43,6 +51,7 @@
     cursor: pointer;
     margin-top: 20px;
   }
+
   
 /* Style de la prévisualisation de l'image */
 .image-preview-container {
