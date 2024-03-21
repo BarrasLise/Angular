@@ -1,0 +1,19 @@
+html{
+    /* background-color: linear-gradiant(#f76c1c,#441803) ;  */
+    background: linear-gradient(90deg, rgba(247,108,28,1) 0%, rgba(68,24,3,1) 100%);
+}
+body {
+    background-image: url(../assets/images/image-lion-background.png);
+    background-position: top-center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 1.125rem;
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+

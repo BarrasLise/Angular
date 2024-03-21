@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    color: rgba(240, 248, 255, 0);
+
+    border-bottom: 1px solid white;
+}
+
+.links {
+    display: flex;
+    justify-content:space-around;
+    align-items: center; 
+}
+.button {
+    margin: 0 5px ;
+    color: white;
+    border: 1px solid white;
+    padding:  15px 35px;
+    text-decoration: none !important;
+}
+

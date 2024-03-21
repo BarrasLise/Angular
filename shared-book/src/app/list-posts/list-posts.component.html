@@ -8,7 +8,7 @@
 
 <div class="list-post">
     <div class="grid-container">
-        <ng-container *ngFor="let item of posts; let i = index">
+        <ng-container *ngFor="let item of posts$ | async ; let i = index">
             <app-post class="post"
                       [myPost]="item"
                       [ngClass]="{ 'odd': i % 2 === 0, 'even': i % 2 !== 0, 'famous': item.like > 100, 'coeur': item.like > 50 }">

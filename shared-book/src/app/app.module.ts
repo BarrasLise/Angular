@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { PostComponent } from "./list-posts/post/post.component";
 import { appRoutingModule } from "./app-routing.module";
 import { FormComponent } from './form/form.component';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FormComponent } from './form/form.component';
     BrowserModule,
     FormsModule, 
     appRoutingModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

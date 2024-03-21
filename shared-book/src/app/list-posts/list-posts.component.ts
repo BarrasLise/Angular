@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { PostsService } from "../service/post.service";
 import { Post } from "./post/post";
+import { Observable } from "rxjs";
+
+
 
 @Component({
   selector: 'app-list-posts',
@@ -8,12 +11,13 @@ import { Post } from "./post/post";
   styleUrl: './list-posts.component.css'
 })
 export class ListPostsComponent {
-  posts:Post[];
+  // posts:Post[];
+  posts$:Observable<Post[]>;
   constructor(private postsService : PostsService){
 
   }
   ngOnInit():void{
-    this.posts= this.postsService.getPosts();
+    this.posts$= this.postsService.getPosts();
   }
 
 }

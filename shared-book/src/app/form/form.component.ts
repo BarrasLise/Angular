@@ -45,11 +45,11 @@ export class FormComponent {
   }
 
   onSubmitForm(){
-    console.log(this.postForm.value);
+ 
     if (this.postForm.valid) {
-      const newPost: Post = this.postForm.value; // Récupérez les données du formulaire sous forme d'objet Post
+      const newPost: Post =new Post( this.postForm.value.title, this.postForm.value.description, this.postForm.value.createdDate,this.postForm.value.url,0, this.postForm.value.location  ); // Récupérez les données du formulaire sous forme d'objet Post
       this.postsService.addPost(newPost); // Ajoutez le nouveau post à la liste des posts via le service
-      this.postForm.reset(); // Réinitialisez le formulaire après l'ajout du post
+      //this.postForm.reset(); // Réinitialisez le formulaire après l'ajout du post
     }
   }
 

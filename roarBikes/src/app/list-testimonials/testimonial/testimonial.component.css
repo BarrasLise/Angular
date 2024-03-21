@@ -1,0 +1,17 @@
+.testimonial-card {
+    width: 500px;
+    min-height: 304px;
+    padding: 50px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+p.message {
+    line-height: 1.75rem;
+}
+
+p.auteur {
+    font-size: 0.8rem;
+    padding-left: 30px;
+}
