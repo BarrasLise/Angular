@@ -10,6 +10,8 @@ import { PostComponent } from "./list-posts/post/post.component";
 import { appRoutingModule } from "./app-routing.module";
 import { FormComponent } from './form/form.component';
 import { HttpClientModule } from "@angular/common/http";
+import { AdminComponent } from './admin/admin.component';
+import { AdminPostComponent } from './admin-post/admin-post.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     HeaderComponent,
     PostComponent,
-    FormComponent
+    FormComponent,
+    AdminComponent,
+    AdminPostComponent
   ],
   imports: [
     BrowserModule,

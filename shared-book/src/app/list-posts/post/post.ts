@@ -14,7 +14,8 @@ export class Post {
 
     // }
 
-    constructor(public title:string,
+    constructor(
+                public title:string,
                 public description:string,
                 public createdDate:Date,
                 public url:string,

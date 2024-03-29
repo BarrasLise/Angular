@@ -1,0 +1,47 @@
+<div class="admin-post-container">
+
+    <ng-container *ngIf="!isEditing; else editForm">
+
+    <p class="title"><strong>Titre:</strong> {{myPost.title | titlecase }}</p>
+       
+    <p class="description"><strong>Description:</strong> {{myPost.description}}</p>
+    <p class="location-label" *ngIf="myPost.location "> <strong>Localisation:</strong> {{myPost.location | uppercase}} </p>
+    <p><strong>Like:</strong> {{myPost.like}} </p>
+
+    <div class="actions">
+        <button class="editer" (click)="startEdit(myPost, i)">Editer</button>
+        <button class="supprimer" (click)="deletePostConfirmation(myPost.id)">Supprimer</button>
+    </div>
+
+    </ng-container>
+
+    <ng-template #editForm>
+        <form (submit)="updatePost()">
+          <div class="form-group">
+            <label for="title">Titre:</label>
+            <input [(ngModel)]="currentPost.title" type="text" name="title" id="title" placeholder="Titre">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input [(ngModel)]="currentPost.description" type="text" name="description" id="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <label for="location">Localisation:</label>
+            <input [(ngModel)]="currentPost.location" type="text" name="location" id="location" placeholder="Localistation">
+          </div>
+          <div class="form-group">
+            <label for="like">Nombre de like:</label>
+            <input [(ngModel)]="currentPost.like" type="number" name="like" id="like" placeholder="Nombre de like">
+          </div>
+          <div class="actions">
+            <button class="enregistrer" type="submit">Enregistrer</button>
+            <button class="annuler" type="button" (click)="cancelEdit()">Annuler</button>
+          </div>
+        </form>
+    </ng-template>
+
+    
+ 
+</div>
+
+    

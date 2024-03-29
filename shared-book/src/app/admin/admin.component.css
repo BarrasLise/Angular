@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+button {
+    background-color: #477290;
+    border-radius: 6px;
+    padding: 5px;
+    border: none;
+}
+input {
+    border: 1px solid #4EA72E;
+    min-width: 50%;
+    padding: 10px 15px 20px 15px;
+    margin-right: 5px;
+}
+input[type="text"]::placeholder {
+    /* Centre le texte du placeholder */
+    text-align: center;
+}

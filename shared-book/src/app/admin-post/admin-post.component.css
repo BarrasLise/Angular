@@ -1,0 +1,71 @@
+button {
+    margin: 5px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: white;
+}
+.admin-post-container {
+    background-color: #F2F2F2;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: inset 0 5px 10px #999999;
+}
+.admin-post-container p  {
+    margin: 10px 0px;
+}
+form {
+    margin-top: 15px;
+}
+.form-group {
+    margin-bottom: 15px; 
+}
+.form-group label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+.form-group input {
+    width: 100%; 
+    padding: 8px; 
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    background-color: transparent; /* Fond transparent */
+}
+.form-group input:focus {
+    outline: none; /* Supprimer le contour de focus par défaut */
+    border-bottom: 1px solid #007bff;    
+}
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.supprimer {
+    background-color: #FF0000;  
+}
+.supprimer:hover {
+    background-color: #ab0303;  
+}
+.editer {
+    background-color: #31A6DF;
+}
+.editer:hover {
+    background-color: #257aa5;  
+}
+.annuler {
+    background-color: #faa200;   
+}
+.annuler:hover {
+    background-color: #c27604;     
+}
+.enregistrer {
+    background-color: rgb(9, 255, 0);
+    color: rgb(0, 0, 0);
+}
+.enregistrer:hover {
+    background-color: rgb(9, 167, 4);  
+}

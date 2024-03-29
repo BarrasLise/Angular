@@ -44,14 +44,37 @@ export class FormComponent {
       
   }
 
-  onSubmitForm(){
+  onSubmitForm() : void {
  
     if (this.postForm.valid) {
+
+      if (this.postForm.value.createdDate) {
+        this.postForm.value.createdDate = new Date(
+          this.postForm.value.createdDate
+        ).toISOString();
+      } else {
+        this.postForm.value.createdDate = new Date().toISOString();
+      }
+  
+
+
+
       const newPost: Post =new Post( this.postForm.value.title, this.postForm.value.description, this.postForm.value.createdDate,this.postForm.value.url,0, this.postForm.value.location  ); // Récupérez les données du formulaire sous forme d'objet Post
-      this.postsService.addPost(newPost); // Ajoutez le nouveau post à la liste des posts via le service
+      this.postsService.addPost(newPost) // Ajoutez le nouveau post à la liste des posts via le service
+      .subscribe({
+        next: () => {
+          console.log('Post deleted successfully!');
+          window.location.reload(); 
+        },
+        error: (error) => {
+          console.error('Error deleting post:', error);
+        }
+      });
       //this.postForm.reset(); // Réinitialisez le formulaire après l'ajout du post
     }
   }
+
+ 
 
   
 

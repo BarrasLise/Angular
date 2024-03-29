@@ -1,7 +1,8 @@
-html{
+
     /* background-color: linear-gradiant(#f76c1c,#441803) ;  */
-    background: linear-gradient(90deg, rgba(247,108,28,1) 0%, rgba(68,24,3,1) 100%);
-}
+    /* background: linear-gradient(180deg, rgba(247,108,28,1) 0%, rgba(68,24,3,1) 100%); */
+    /* background: linear-gradient(#f76c1c, #441803); */
+
 body {
     background-image: url(../assets/images/image-lion-background.png);
     background-position: top-center;
