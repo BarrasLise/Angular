@@ -15,12 +15,14 @@ export class Post {
     // }
 
     constructor(
+               
                 public title:string,
                 public description:string,
                 public createdDate:Date,
                 public url:string,
                 public like:number,
                 public location?:string, 
+                public id?:number,
                 ){
 
     }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import {Post} from './post';
+import { Component, Input,   } from '@angular/core';
+import { Post } from "./post";
+
 
 @Component({
   selector: 'app-post',
@@ -24,6 +25,7 @@ export class PostComponent {
       this.myPost.like --
     }
   }
+
 
  
 

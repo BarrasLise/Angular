@@ -1,13 +1,12 @@
-<form (ngSubmit)="searchByTitle()">
-    <input [(ngModel)]="searchTitle" type="text" name="searchTitle" placeholder="Recherche un post par son titre">
+<form (ngSubmit)="filterPosts()">
+    <input [(ngModel)]="searchTerm" type="text" name="search" placeholder="Recherche un post ">
     <button type="submit">Rechercher</button>
 </form>
 
 <div class="list-post">
     <div class="grid-container">
-        <ng-container *ngFor="let item of posts$ | async ; let i = index">
-            <app-admin-post class="post"
-            [myPost]="item" [postIndex]="i">
+            <ng-container *ngFor="let post of filteredPosts$ | async" >
+            <app-admin-post class="post"  [myPost]="post" (postDeleted)="onPostDeleted()" (postEdited)="onPostEdited()">
             </app-admin-post>
         </ng-container>
     </div>

@@ -1,17 +1,18 @@
 <div class="admin-post-container">
 
     <ng-container *ngIf="!isEditing; else editForm">
+      <p>{{myPost.id }}</p>
 
-    <p class="title"><strong>Titre:</strong> {{myPost.title | titlecase }}</p>
-       
-    <p class="description"><strong>Description:</strong> {{myPost.description}}</p>
-    <p class="location-label" *ngIf="myPost.location "> <strong>Localisation:</strong> {{myPost.location | uppercase}} </p>
-    <p><strong>Like:</strong> {{myPost.like}} </p>
+      <p class="title"><strong>Titre:</strong> {{myPost.title | titlecase }}</p>
+        
+      <p class="description"><strong>Description:</strong> {{myPost.description}}</p>
+      <p class="location-label" *ngIf="myPost.location "> <strong>Localisation:</strong> {{myPost.location | uppercase}} </p>
+      <p><strong>Like:</strong> {{myPost.like}} </p>
 
-    <div class="actions">
-        <button class="editer" (click)="startEdit(myPost, i)">Editer</button>
-        <button class="supprimer" (click)="deletePostConfirmation(myPost.id)">Supprimer</button>
-    </div>
+      <div class="actions">
+          <button class="editer" (click)="startEdit(myPost)">Editer</button>
+          <button class="supprimer" (click)="deletePostConfirmation(myPost.id)">Supprimer</button>
+      </div>
 
     </ng-container>
 
@@ -39,9 +40,6 @@
           </div>
         </form>
     </ng-template>
-
-    
- 
 </div>
 
     

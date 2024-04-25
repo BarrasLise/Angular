@@ -23,15 +23,16 @@ export class PostsService{
     getPosts(): Observable<Post[]> {
         return this.http.get<Post[]>('http://localhost:9000/posts');
     }
+
     addPost(post:Post){
-    //   console.log("here");
-    console.log(post);
-    
+        //   console.log("here");
+        console.log(post);
         return this.http.post('http://localhost:9000/posts', post);
     }
     
-    updatePost(postId: string, updatedPost: Post): Observable<any> {
-        return this.http.put(`http://localhost:9000/posts/${postId}`, updatedPost);
+    updatePost( updatedPost: Post): Observable<any> {
+        
+        return this.http.put(`http://localhost:9000/posts/${updatedPost.id}`, updatedPost);
     }
 
     deletePost(postId: string): Observable<any> {

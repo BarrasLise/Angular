@@ -32,14 +32,18 @@
             
             <i (click)="disliked()" class="fa-solid fa-thumbs-down fa-xl"></i> -->
             <div class="like-icon">
-                <i (click)="liked()" class="fa-solid fa-thumbs-up fa-m  like"></i>
+                <i 
+                (click)="liked()" 
+                class="fa-solid fa-thumbs-up fa-m  like"  ></i>
             </div>
             <!-- <div class="number-like">
                 <p>{{myPost.like}} ♥ </p>
     
             </div> -->
             <div class="number-like">
-                <p>{{myPost.like}} <span *ngIf="myPost.like <= 100">♥</span><span *ngIf="myPost.like > 100">★</span></p>
+                <p>{{myPost.like }} 
+                <span *ngIf="myPost.like <= 100">♥</span><span *ngIf="myPost.like > 100">★</span>
+                </p>
             </div>
             <!-- <p>{{myPost.like}} ♥ </p> -->
             <div class="dislike-icon">
